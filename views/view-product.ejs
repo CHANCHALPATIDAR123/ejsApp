@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <%-include('__bootstrap.ejs')%>
+    </head>
+    <body>
+        <%-include('nav.ejs')%>
+
+        <div class="container mt-4"> <!--container with a top margin of 4 -->
+            <h1>View Products</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>category</th>
+                    </tr>
+                </thead>
+                <tbody> <!-- body rows  -->
+                    <% let i=1 %>
+                    <% product.forEach(products => { %>
+                    <tr>
+                        <td><%= i++ %></td>
+
+                        <td><%= products.ProductName %></td>
+
+                        <td><%= products.Price %></td>
+
+                        <td><%= products. CategoryID%></td>
+
+                        <td><a
+                                onclick="return confirm('Do you want to delete ?')"
+                                href="/product/delete/<%=products.ProductID%>"><button>delete</button></a></td>
+
+                        <td><a
+                                href="/product/edit/<%=products.ProductID%>"><button>edit</button></a></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+</html>

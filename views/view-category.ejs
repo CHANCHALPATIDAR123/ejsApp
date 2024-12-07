@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <%-include('__bootstrap.ejs')%>
+    </head>
+    <body>
+        <%-include('nav.ejs')%>
+
+        <div class="container mt-4"> <!--container with a top margin of 4 -->
+            <h1>View Category</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody> <!-- body rows  -->
+                    <% let i=1 %>
+                    <% category.forEach(category => { %>
+                    <tr>
+                        <td><%= i++ %></td>
+
+                        <td><%= category.name %></td>
+                        <td><a
+                                href="/category/delete/<%=category.id%>"><button>delete</button></a></td>
+
+                        <td><a
+                                href="/category/edit/<%=category.id%>"><button>edit</button></a></td>
+
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+</html>

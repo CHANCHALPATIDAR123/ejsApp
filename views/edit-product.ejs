@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <%- include('__bootstrap.ejs') %>
+    </head>
+    <body>
+        <%- include('nav.ejs') %>
+        <div class="container mt-4">
+
+            <!-- <pre><%= JSON.stringify(product, null, 2) %></pre> -->
+
+            <form action="/product/edit" method="post">
+
+                <input type="hidden" name="id"
+                    value="<%= product.ProductID %>" />
+
+                <div class="form-group">
+                    <label for="title">Product Name</label>
+                    <input
+                        id="title"
+                        type="text"
+                        name="title"
+                        class="form-control"
+                        placeholder="Enter product title"
+                        value="<%= product.ProductName %>" />
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input
+                        id="price"
+                        type="number"
+                        name="price"
+                        class="form-control"
+                        placeholder="Enter product price"
+                        value="<%= product.Price %>" />
+                </div>
+
+                <!-- Submit button -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">edit</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

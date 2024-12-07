@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-image: url('hotel.jpg');
+    /* Add an image in public/images */
+    background-size: cover;
+    background-position: center;
+}
